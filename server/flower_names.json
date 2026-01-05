@@ -1,0 +1,610 @@
+{
+  "164": {
+    "chinese_name": "紫叶竹节秋海棠（紫竹梅）",
+    "english_name": "Tradescantia pallida"
+  },
+  "165": {
+    "chinese_name": "龙牙草（仙鹤草）",
+    "english_name": "Agrimonia eupatoria"
+  },
+  "166": {
+    "chinese_name": "络石（风车茉莉）",
+    "english_name": "Trachelospermum jasminoides"
+  },
+  "167": {
+    "chinese_name": "湖北荚蒾",
+    "english_name": "Eriocapitella hupehensis"
+  },
+  "169": {
+    "chinese_name": "旱金莲",
+    "english_name": "Tropaeolum majus"
+  },
+  "171": {
+    "chinese_name": "白花雪果",
+    "english_name": "Symphoricarpos albus"
+  },
+  "172": {
+    "chinese_name": "吊兰",
+    "english_name": "Chlorophytum comosum"
+  },
+  "173": {
+    "chinese_name": "啤酒花",
+    "english_name": "Humulus lupulus"
+  },
+  "174": {
+    "chinese_name": "白景天",
+    "english_name": "Sedum album"
+  },
+  "176": {
+    "chinese_name": "忍冬（金银花）",
+    "english_name": "Lonicera japonica"
+  },
+  "177": {
+    "chinese_name": "紫花老鹳草",
+    "english_name": "Geranium purpureum"
+  },
+  "178": {
+    "chinese_name": "榆叶黑莓",
+    "english_name": "Rubus ulmifolius"
+  },
+  "179": {
+    "chinese_name": "蓝铃花",
+    "english_name": "Hyacinthoides non-scripta"
+  },
+  "180": {
+    "chinese_name": "熊葱（野蒜）",
+    "english_name": "Allium ursinum"
+  },
+  "183": {
+    "chinese_name": "林生水苏",
+    "english_name": "Stachys sylvatica"
+  },
+  "184": {
+    "chinese_name": "马铃薯（阳芋）",
+    "english_name": "Solanum tuberosum"
+  },
+  "185": {
+    "chinese_name": "玫瑰",
+    "english_name": "Rosa rugosa"
+  },
+  "186": {
+    "chinese_name": "紫花红门兰",
+    "english_name": "Orchis purpurea"
+  },
+  "188": {
+    "chinese_name": "欧洲忍冬",
+    "english_name": "Lonicera xylosteum"
+  },
+  "189": {
+    "chinese_name": "柠檬",
+    "english_name": "Citrus × limon"
+  },
+  "190": {
+    "chinese_name": "血色老鹳草",
+    "english_name": "Geranium sanguineum"
+  },
+  "192": {
+    "chinese_name": "叶子花（三角梅）",
+    "english_name": "Bougainvillea spectabilis"
+  },
+  "193": {
+    "chinese_name": "大麦",
+    "english_name": "Hordeum vulgare"
+  },
+  "194": {
+    "chinese_name": "撒尔维亚叶岩蔷薇",
+    "english_name": "Cistus salviifolius"
+  },
+  "195": {
+    "chinese_name": "罗勒",
+    "english_name": "Ocimum basilicum"
+  },
+  "197": {
+    "chinese_name": "白毛岩蔷薇",
+    "english_name": "Cistus albidus"
+  },
+  "198": {
+    "chinese_name": "喉管草",
+    "english_name": "Campanula trachelium"
+  },
+  "199": {
+    "chinese_name": "欧石楠",
+    "english_name": "Calluna vulgaris"
+  },
+  "200": {
+    "chinese_name": "滨菊",
+    "english_name": "Leucanthemum vulgare"
+  },
+  "201": {
+    "chinese_name": "续随子",
+    "english_name": "Euphorbia lathyris"
+  },
+  "202": {
+    "chinese_name": "荠菜",
+    "english_name": "Capsella bursa-pastoris"
+  },
+  "203": {
+    "chinese_name": "日本小檗（红叶小檗）",
+    "english_name": "Berberis thunbergii"
+  },
+  "204": {
+    "chinese_name": "洋水仙（黄水仙）",
+    "english_name": "Narcissus pseudonarcissus"
+  },
+  "205": {
+    "chinese_name": "甜菜",
+    "english_name": "Beta vulgaris"
+  },
+  "206": {
+    "chinese_name": "黑毛蕊花",
+    "english_name": "Verbascum nigrum"
+  },
+  "207": {
+    "chinese_name": "苹果",
+    "english_name": "Malus domestica"
+  },
+  "208": {
+    "chinese_name": "橙黄花亚菊",
+    "english_name": "Pilosella aurantiaca"
+  },
+  "209": {
+    "chinese_name": "酢浆草（酸味草）",
+    "english_name": "Oxalis corniculata"
+  },
+  "210": {
+    "chinese_name": "白花矾根（墨西哥橘）",
+    "english_name": "Choisya ternata"
+  },
+  "211": {
+    "chinese_name": "欧洲接骨木",
+    "english_name": "Sambucus ebulus"
+  },
+  "212": {
+    "chinese_name": "小老鹳草",
+    "english_name": "Geranium pusillum"
+  },
+  "213": {
+    "chinese_name": "大叶黄杨",
+    "english_name": "Euonymus japonicus"
+  },
+  "214": {
+    "chinese_name": "林地老鹳草",
+    "english_name": "Geranium sylvaticum"
+  },
+  "215": {
+    "chinese_name": "酸橙（苦橙）",
+    "english_name": "Citrus × aurantium"
+  },
+  "216": {
+    "chinese_name": "母菊（洋甘菊）",
+    "english_name": "Matricaria chamomilla"
+  },
+  "217": {
+    "chinese_name": "伤口花",
+    "english_name": "Anthyllis vulneraria"
+  },
+  "218": {
+    "chinese_name": "山矢车菊",
+    "english_name": "Centaurea montana"
+  },
+  "220": {
+    "chinese_name": "盔瓣秋海棠",
+    "english_name": "Begonia cucullata"
+  },
+  "221": {
+    "chinese_name": "海滨千里光",
+    "english_name": "Jacobaea maritima"
+  },
+  "222": {
+    "chinese_name": "泽漆（五朵云）",
+    "english_name": "Euphorbia helioscopia"
+  },
+  "223": {
+    "chinese_name": "草地老鹳草",
+    "english_name": "Geranium pratense"
+  },
+  "224": {
+    "chinese_name": "三色堇",
+    "english_name": "Viola tricolor"
+  },
+  "225": {
+    "chinese_name": "库珀冰叶日中花",
+    "english_name": "Delosperma cooperi"
+  },
+  "226": {
+    "chinese_name": "吊竹梅（斑叶鸭跖草）",
+    "english_name": "Tradescantia zebrina"
+  },
+  "227": {
+    "chinese_name": "除虫菊",
+    "english_name": "Tanacetum parthenium"
+  },
+  "228": {
+    "chinese_name": "香花芥",
+    "english_name": "Hesperis matronalis"
+  },
+  "229": {
+    "chinese_name": "缬草（药用缬草）",
+    "english_name": "Valeriana officinalis"
+  },
+  "230": {
+    "chinese_name": "木瓜海棠（皱皮木瓜）",
+    "english_name": "Chaenomeles speciosa"
+  },
+  "231": {
+    "chinese_name": "假叶树（刺叶树）",
+    "english_name": "Ruscus aculeatus"
+  },
+  "232": {
+    "chinese_name": "细叶还阳参",
+    "english_name": "Crepis capillaris"
+  },
+  "233": {
+    "chinese_name": "绵毛水苏（羊耳朵草）",
+    "english_name": "Stachys byzantina"
+  },
+  "234": {
+    "chinese_name": "四裂荆芥",
+    "english_name": "Galeopsis tetrahit"
+  },
+  "235": {
+    "chinese_name": "普通千里光",
+    "english_name": "Senecio vulgaris"
+  },
+  "236": {
+    "chinese_name": "皱叶酸模",
+    "english_name": "Rumex crispus"
+  },
+  "237": {
+    "chinese_name": "猪殃殃（钝叶拉拉藤）",
+    "english_name": "Galium mollugo"
+  },
+  "238": {
+    "chinese_name": "杏叶大戟",
+    "english_name": "Euphorbia amygdaloides"
+  },
+  "239": {
+    "chinese_name": "斑叶掌裂兰",
+    "english_name": "Dactylorhiza maculata"
+  },
+  "240": {
+    "chinese_name": "欧洲百合",
+    "english_name": "Lilium martagon"
+  },
+  "241": {
+    "chinese_name": "金光菊（黑心菊）",
+    "english_name": "Rudbeckia fulgida"
+  },
+  "242": {
+    "chinese_name": "岩生脐草",
+    "english_name": "Umbilicus rupestris"
+  },
+  "243": {
+    "chinese_name": "猫儿菊",
+    "english_name": "Hypochaeris radicata"
+  },
+  "244": {
+    "chinese_name": "勋章菊",
+    "english_name": "Gazania rigens"
+  },
+  "245": {
+    "chinese_name": "广布野豌豆",
+    "english_name": "Vicia cracca"
+  },
+  "1734": {
+    "chinese_name": "欧鼠李",
+    "english_name": "Rhamnus alaternus"
+  },
+  "1743": {
+    "chinese_name": "欧楂",
+    "english_name": "Cydonia oblonga"
+  },
+  "1747": {
+    "chinese_name": "苹果薄荷",
+    "english_name": "Mentha suaveolens"
+  },
+  "1749": {
+    "chinese_name": "北美鹅掌楸（郁金香树）",
+    "english_name": "Liriodendron tulipifera"
+  },
+  "1750": {
+    "chinese_name": "欧洲梨",
+    "english_name": "Pyrus communis"
+  },
+  "1751": {
+    "chinese_name": "欧洲椴（阔叶椴）",
+    "english_name": "Tilia platyphyllos"
+  },
+  "1759": {
+    "chinese_name": "香桃木",
+    "english_name": "Myrtus communis"
+  },
+  "1765": {
+    "chinese_name": "欧洲赤松",
+    "english_name": "Pinus sylvestris"
+  },
+  "1770": {
+    "chinese_name": "香龙血树（巴西木）",
+    "english_name": "Dracaena fragrans"
+  },
+  "1772": {
+    "chinese_name": "水飞蓟",
+    "english_name": "Silybum marianum"
+  },
+  "1774": {
+    "chinese_name": "栾树",
+    "english_name": "Koelreuteria paniculata"
+  },
+  "1776": {
+    "chinese_name": "欧洲山杨（垂枝桦）",
+    "english_name": "Betula pendula"
+  },
+  "1777": {
+    "chinese_name": "日本木瓜（倭海棠）",
+    "english_name": "Chaenomeles japonica"
+  },
+  "1780": {
+    "chinese_name": "宽叶山黧豆（香豌豆）",
+    "english_name": "Lathyrus latifolius"
+  },
+  "1784": {
+    "chinese_name": "打碗花（篱打碗花）",
+    "english_name": "Calystegia sepium"
+  },
+  "1785": {
+    "chinese_name": "龙舌兰",
+    "english_name": "Agave americana"
+  },
+  "1786": {
+    "chinese_name": "欧洲云杉（挪威云杉）",
+    "english_name": "Picea abies"
+  },
+  "1789": {
+    "chinese_name": "白柳",
+    "english_name": "Salix alba"
+  },
+  "1796": {
+    "chinese_name": "红花接骨木",
+    "english_name": "Sambucus racemosa"
+  },
+  "1797": {
+    "chinese_name": "黄杨",
+    "english_name": "Buxus sempervirens"
+  },
+  "1801": {
+    "chinese_name": "斑点蓼",
+    "english_name": "Persicaria maculosa"
+  },
+  "1805": {
+    "chinese_name": "留兰香（绿薄荷）",
+    "english_name": "Mentha spicata"
+  },
+  "1806": {
+    "chinese_name": "女贞（大叶女贞）",
+    "english_name": "Ligustrum lucidum"
+  },
+  "1808": {
+    "chinese_name": "泽珍珠菜",
+    "english_name": "Lysimachia vulgaris"
+  },
+  "1818": {
+    "chinese_name": "野甘蓝（花椰菜祖先）",
+    "english_name": "Brassica oleracea"
+  },
+  "1827": {
+    "chinese_name": "晚花稠李",
+    "english_name": "Prunus serotina"
+  },
+  "1833": {
+    "chinese_name": "多叶羽扇豆（鲁冰花）",
+    "english_name": "Lupinus polyphyllus"
+  },
+  "168": {
+    "chinese_name": "桃叶风铃草",
+    "english_name": "Campanula persicifolia"
+  },
+  "170": {
+    "chinese_name": "田野珍珠菜",
+    "english_name": "Lysimachia arvensis"
+  },
+  "175": {
+    "chinese_name": "柠檬白千层",
+    "english_name": "Melaleuca citrina"
+  },
+  "181": {
+    "chinese_name": "多变小冠花",
+    "english_name": "Coronilla varia"
+  },
+  "182": {
+    "chinese_name": "高加索马鞭草",
+    "english_name": "Verbena bonariensis"
+  },
+  "187": {
+    "chinese_name": "龟背竹",
+    "english_name": "Monstera deliciosa"
+  },
+  "196": {
+    "chinese_name": "郁金香",
+    "english_name": "Tulipa gesneriana"
+  },
+  "219": {
+    "chinese_name": "锦带花",
+    "english_name": "Weigela florida"
+  },
+  "246": {
+    "chinese_name": "西班牙薰衣草",
+    "english_name": "Lavandula stoechas"
+  },
+  "247": {
+    "chinese_name": "黄花酢浆草",
+    "english_name": "Oxalis pes-caprae"
+  },
+  "248": {
+    "chinese_name": "粉花月见草",
+    "english_name": "Oenothera glazioviana"
+  },
+  "249": {
+    "chinese_name": "草地婆罗门参",
+    "english_name": "Tragopogon pratensis"
+  },
+  "250": {
+    "chinese_name": "海茴香",
+    "english_name": "Crithmum maritimum"
+  },
+  "251": {
+    "chinese_name": "小地榆",
+    "english_name": "Sanguisorba minor"
+  },
+  "252": {
+    "chinese_name": "非洲百合",
+    "english_name": "Agapanthus praecox"
+  },
+  "253": {
+    "chinese_name": "可食花楸",
+    "english_name": "Aria edulis"
+  },
+  "254": {
+    "chinese_name": "聚花风铃草",
+    "english_name": "Campanula glomerata"
+  },
+  "255": {
+    "chinese_name": "蜜蜂兰",
+    "english_name": "Ophrys apifera"
+  },
+  "256": {
+    "chinese_name": "蓝目菊",
+    "english_name": "Dimorphotheca ecklonis"
+  },
+  "257": {
+    "chinese_name": "剪秋罗",
+    "english_name": "Silene flos-cuculi"
+  },
+  "258": {
+    "chinese_name": "美丽月见草",
+    "english_name": "Oenothera lindheimeri"
+  },
+  "259": {
+    "chinese_name": "伯利恒之星",
+    "english_name": "Ornithogalum umbellatum"
+  },
+  "260": {
+    "chinese_name": "反枝苋",
+    "english_name": "Amaranthus retroflexus"
+  },
+  "261": {
+    "chinese_name": "毛蕊花",
+    "english_name": "Verbascum densiflorum"
+  },
+  "262": {
+    "chinese_name": "六出花",
+    "english_name": "Alstroemeria aurea"
+  },
+  "263": {
+    "chinese_name": "苔景天",
+    "english_name": "Sedum acre"
+  },
+  "264": {
+    "chinese_name": "糙叶矢车菊",
+    "english_name": "Centaurea scabiosa"
+  },
+  "265": {
+    "chinese_name": "长柔毛野豌豆",
+    "english_name": "Vicia villosa"
+  },
+  "266": {
+    "chinese_name": "飘香藤",
+    "english_name": "Mandevilla laxa"
+  },
+  "267": {
+    "chinese_name": "欧洲忍冬（金银花）",
+    "english_name": "Lonicera periclymenum"
+  },
+  "268": {
+    "chinese_name": "欧洲风铃草",
+    "english_name": "Campanula rapunculus"
+  },
+  "269": {
+    "chinese_name": "德国鸢尾",
+    "english_name": "Iris × germanica"
+  },
+  "271": {
+    "chinese_name": "黑矢车菊",
+    "english_name": "Centaurea nigra"
+  },
+  "272": {
+    "chinese_name": "杂种野芝麻",
+    "english_name": "Lamium hybridum"
+  },
+  "273": {
+    "chinese_name": "翡翠珠",
+    "english_name": "Graptopetalum paraguayense"
+  },
+  "274": {
+    "chinese_name": "铃兰",
+    "english_name": "Convallaria majalis"
+  },
+  "275": {
+    "chinese_name": "大花马齿苋（太阳花）",
+    "english_name": "Portulaca grandiflora"
+  },
+  "276": {
+    "chinese_name": "粘毛白酒草",
+    "english_name": "Dittrichia viscosa"
+  },
+  "277": {
+    "chinese_name": "八宝景天",
+    "english_name": "Hylotelephium telephium"
+  },
+  "278": {
+    "chinese_name": "斑叶阿若母",
+    "english_name": "Arum maculatum"
+  },
+  "279": {
+    "chinese_name": "紫牵牛",
+    "english_name": "Ipomoea purpurea"
+  },
+  "280": {
+    "chinese_name": "灌木糙苏",
+    "english_name": "Phlomis fruticosa"
+  },
+  "281": {
+    "chinese_name": "南天竹",
+    "english_name": "Nandina domestica"
+  },
+  "282": {
+    "chinese_name": "香车叶草",
+    "english_name": "Galium odoratum"
+  },
+  "283": {
+    "chinese_name": "树锦葵",
+    "english_name": "Malva arborea"
+  },
+  "284": {
+    "chinese_name": "棣棠",
+    "english_name": "Kerria japonica"
+  },
+  "285": {
+    "chinese_name": "火炬花",
+    "english_name": "Kniphofia uvaria"
+  },
+  "287": {
+    "chinese_name": "比利牛斯老鹳草",
+    "english_name": "Geranium pyrenaicum"
+  },
+  "288": {
+    "chinese_name": "白野芝麻",
+    "english_name": "Lamium album"
+  },
+  "289": {
+    "chinese_name": "红掌（安祖花）",
+    "english_name": "Anthurium andraeanum"
+  },
+  "290": {
+    "chinese_name": "圆叶风铃草",
+    "english_name": "Campanula rotundifolia"
+  },
+  "291": {
+    "chinese_name": "三色堇",
+    "english_name": "Viola × wittrockiana"
+  }
+}

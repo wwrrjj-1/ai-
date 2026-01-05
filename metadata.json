@@ -1,0 +1,6 @@
+
+{
+  "name": "智能识花 - AI Flower ID",
+  "description": "一款基于 Gemini AI 的高精度花卉识别应用，提供植物百科、养护建议及文化内涵。",
+  "requestFramePermissions": ["camera"]
+}
