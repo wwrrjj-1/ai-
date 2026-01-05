@@ -7,7 +7,12 @@ except Exception:
     ZhipuAI = None
 
 def _load_api_key():
-    # Look for apikey.txt in the SAME directory as this file (server/)
+    # Priority 1: Check environment variable (for cloud deployment)
+    api_key = os.environ.get('ZHIPU_API_KEY')
+    if api_key:
+        return api_key.strip()
+    
+    # Priority 2: Look for apikey.txt in the SAME directory as this file (server/)
     base = os.path.dirname(os.path.abspath(__file__))
     path = os.path.join(base, 'apikey.txt')
     if os.path.exists(path):
