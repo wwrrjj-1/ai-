@@ -3,16 +3,24 @@ import os
 import io
 import json
 import base64
-import torch
-import torch.nn.functional as F
+
+# Optional ML imports - only needed for local model inference
+try:
+    import torch
+    import torch.nn.functional as F
+    from torchvision import transforms
+    from model import get_model
+    TORCH_AVAILABLE = True
+except ImportError:
+    TORCH_AVAILABLE = False
+    torch = None
+    
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from PIL import Image
-from torchvision import transforms
 
-# Imports from same directory
-from model import get_model
+# AI utils are always needed (for cloud API)
 from utils_ai import get_flower_info, identify_flower_by_vision
 
 app = FastAPI()
@@ -37,6 +45,13 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def load_resources():
     global device, model, idx_to_class, flower_names, ML_AVAILABLE, ML_ERROR
+    
+    # If torch is not available, skip ML loading entirely
+    if not TORCH_AVAILABLE:
+        print("⚠️ PyTorch not available - running in API-only mode")
+        ML_AVAILABLE = False
+        ML_ERROR = "PyTorch not installed (cloud deployment mode)"
+        return
     
     print("Loading resources from:", BASE_DIR)
     
