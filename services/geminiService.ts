@@ -1,7 +1,7 @@
 
 import { FlowerInfo } from "../types";
 
-const API_URL = "http://localhost:8000/identify";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/identify";
 
 export const identifyFlower = async (base64Image: string): Promise<FlowerInfo> => {
   try {
