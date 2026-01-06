@@ -47,6 +47,7 @@ async function identifyFlowerByVision(base64Image: string): Promise<string> {
 async function getFlowerInfo(flowerName: string): Promise<Omit<FlowerInfo, "name" | "confidence" | "description">> {
   const prompt = `请为花卉"${flowerName}"生成以下信息，严格按照JSON格式返回：
 {
+  "description": "简短优雅的花卉介绍，30字以内",
   "poetry": "一句与此花相关的诗词，两行，用逗号分隔（如：采菊东篱下，悠然见南山）",
   "botany": "植物学特征，80字以内，优雅简洁",
   "culture": "文化内涵，80字以内，富有诗意",
