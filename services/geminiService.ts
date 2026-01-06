@@ -20,7 +20,7 @@ async function identifyFlowerByVision(base64Image: string): Promise<string> {
           content: [
             {
               type: "text",
-              text: "请识别图片中的花卉名称。只返回花卉的中文名称，不要有任何额外的说明或标点符号。"
+              text: "请识别图片中的花卉名称。直接返回花名（例如：玫瑰），不要加'中文名称'等前缀，不要任何标点符号。"
             },
             {
               type: "image_url",
@@ -31,7 +31,7 @@ async function identifyFlowerByVision(base64Image: string): Promise<string> {
           ]
         }
       ],
-      temperature: 0.3,
+      temperature: 0.1, // 降低温度以获得更确定的回答
     }),
   });
 
@@ -40,7 +40,15 @@ async function identifyFlowerByVision(base64Image: string): Promise<string> {
   }
 
   const data = await response.json();
-  return data.choices[0].message.content.trim();
+  let name = data.choices[0].message.content.trim();
+
+  // 清理可能的前缀（双重保险）
+  name = name.replace(/^中文名称[：:]\s*/, '')
+    .replace(/^花名[：:]\s*/, '')
+    .replace(/^识别结果[：:]\s*/, '')
+    .replace(/[。，！.!,]/g, ''); // 移除标点
+
+  return name;
 }
 
 // 获取花卉详细信息 - 使用 GLM-4 文本 API
@@ -48,7 +56,7 @@ async function getFlowerInfo(flowerName: string): Promise<Omit<FlowerInfo, "name
   const prompt = `请为花卉"${flowerName}"生成以下信息，严格按照JSON格式返回：
 {
   "scientificName": "花卉的英文名称（如：Rose, Sunflower等）",
-  "description": "简短优雅的花卉介绍，30字以内",
+  "description": "优美详细的花卉介绍，包括形态特征和观赏价值，50-80字",
   "poetry": "一句与此花相关的诗词，两行，用逗号分隔（如：采菊东篱下，悠然见南山）",
   "botany": "植物学特征，80字以内，优雅简洁",
   "culture": "文化内涵，80字以内，富有诗意",
