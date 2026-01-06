@@ -37,7 +37,7 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
           ]
         }
       ],
-      temperature: 0.5, // 提高温度以增加多样性
+      temperature: 0.8, // 提高温度以增加多样性
     }),
   });
 
