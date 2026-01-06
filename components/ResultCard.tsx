@@ -31,7 +31,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ info, imageSrc }) => {
             <h2 className="text-3xl font-black text-gray-900 leading-none mb-2">
               {info.name}
             </h2>
-            <p className="text-xs italic text-emerald-600/60 font-medium tracking-wide">
+            <p className="text-sm text-gray-400 font-serif italic tracking-widest opacity-80 mt-1">
               {info.scientificName}
             </p>
           </div>
