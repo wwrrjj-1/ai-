@@ -25,7 +25,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ info, imageSrc }) => {
       </div>
 
       {/* 优化后的核心信息区 */}
-      <div className="flex-1 p-6 md:p-8 flex flex-col justify-center min-w-0 bg-white">
+      <div className="flex-1 p-6 md:p-8 flex flex-col justify-start pt-10 md:pt-12 min-w-0 bg-white">
         <div className="flex items-start justify-between mb-2">
           <div>
             <h2 className="text-3xl font-black text-gray-900 leading-none mb-2">
