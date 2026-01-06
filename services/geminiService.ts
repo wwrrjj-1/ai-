@@ -26,7 +26,7 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
           content: [
             {
               type: "text",
-              text: "请识别图片中的花卉。返回一个JSON格式，包含两个字段：name（花卉中文名称，不要加任何前缀），confidence（识别置信度，根据图片清晰度给出0.80到0.99之间的小数，不要总是返回0.95）。只返回JSON。"
+              text: "请识别图片中的花卉。返回一个JSON格式，包含两个字段：name（花卉中文名称，不要加任何前缀），confidence（识别置信度，根据图片清晰度、光照和特征完整性，给出一个精确的0.80到0.99之间的小数，例如0.98, 0.87, 0.92等。**严禁返回0.95**，必须根据实际情况打分）。只返回JSON。"
             },
             {
               type: "image_url",
