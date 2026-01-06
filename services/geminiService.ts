@@ -44,7 +44,7 @@ async function identifyFlowerByVision(base64Image: string): Promise<string> {
 }
 
 // 获取花卉详细信息 - 使用 GLM-4 文本 API
-async function getFlowerInfo(flowerName: string): Promise<Omit<FlowerInfo, "name" | "confidence" | "description">> {
+async function getFlowerInfo(flowerName: string): Promise<Omit<FlowerInfo, "name" | "confidence">> {
   const prompt = `请为花卉"${flowerName}"生成以下信息，严格按照JSON格式返回：
 {
   "description": "简短优雅的花卉介绍，30字以内",
