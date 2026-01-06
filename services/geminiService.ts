@@ -90,7 +90,8 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
   const decimalMatch = content.match(/\b0\.\d+\b/);
 
   if (percentMatch) {
-    confidence = parseFloat(percentMatch[1]) / 100;
+    // Use the full matched string (e.g. "94.2%") to parse float, which handles the decimal correctly
+    confidence = parseFloat(percentMatch[0]) / 100;
   } else if (decimalMatch) {
     confidence = parseFloat(decimalMatch[0]);
   }
