@@ -48,14 +48,15 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
   const data = await response.json();
   const content = data.choices[0].message.content.trim();
 
-  // console.log("🌸 Vision API Raw Response:", content);
+  console.log("🌸 Vision API Raw Response:", content);
 
   // 尝试解析 JSON
   try {
     const jsonMatch = content.match(/\{[\s\S]*\}/);
     if (jsonMatch) {
       const result = JSON.parse(jsonMatch[0]);
-      // console.log("✅ Parsed JSON:", result);
+      console.log("✅ Parsed JSON:", result);
+      console.log("📊 Confidence value:", result.confidence, typeof result.confidence);
 
       let conf = 0.95;
       if (typeof result.confidence === 'number') {
@@ -66,6 +67,28 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
 
       // 确保置信度在合理范围内 (0-1)
       if (conf > 1) conf = conf / 100;
+
+      // 方案B：为整数档位的置信度添加微小扰动，让显示更自然
+      // 检查是否是整数百分比（如 0.95, 0.96）
+      const isWholePercent = Math.abs((conf * 100) - Math.round(conf * 100)) < 0.01;
+
+      if (isWholePercent) {
+        // 基于花名生成确定性扰动（同一朵花每次扰动相同）
+        let hash = 0;
+        const name = result.name || "unknown";
+        for (let i = 0; i < name.length; i++) {
+          hash = name.charCodeAt(i) + ((hash << 5) - hash);
+        }
+
+        // 生成 -0.02 到 +0.02 之间的扰动（±2%）
+        const perturbation = ((Math.abs(hash) % 40) - 20) / 1000;
+        conf = conf + perturbation;
+
+        console.log(`🎲 Applied perturbation: ${perturbation.toFixed(4)} → Final: ${conf.toFixed(4)}`);
+      }
+
+      // 最终确保在合理范围内
+      conf = Math.min(Math.max(conf, 0.82), 0.99);
 
       return {
         name: result.name || "未知花卉",
