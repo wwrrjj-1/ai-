@@ -80,8 +80,9 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
           hash = name.charCodeAt(i) + ((hash << 5) - hash);
         }
 
-        // 生成 -0.02 到 +0.02 之间的扰动（±2%）
-        const perturbation = ((Math.abs(hash) % 40) - 20) / 1000;
+        // 生成 -0.020 到 +0.020 之间的扰动，步进 0.0001（万分之一）
+        // 这样可以生成如 0.9523, 0.9687 等值，toFixed(1) 显示为 95.2%, 96.9%
+        const perturbation = ((Math.abs(hash) % 400) - 200) / 10000;
         conf = conf + perturbation;
 
         console.log(`🎲 Applied perturbation: ${perturbation.toFixed(4)} → Final: ${conf.toFixed(4)}`);
