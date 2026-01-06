@@ -81,13 +81,28 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
   name = name.replace(/^中文名称[：:]\s*/, '')
     .replace(/^花名[：:]\s*/, '')
     .replace(/^识别结果[：:]\s*/, '')
+    .replace(/["{}\n]/g, '') // 清理JSON残留符号
     .replace(/[。，！.!,]/g, '');
 
-  // 尝试从文本中提取数字作为置信度（如果存在）
-  const confidenceMatch = content.match(/(\d+(\.\d+)?)/);
-  const confidence = confidenceMatch ? Math.min(parseFloat(confidenceMatch[0]), 0.99) : 0.92;
+  // 尝试从文本中提取置信度 (支持 "置信度：0.88", "confidence: 95%", "0.98" 等格式)
+  let confidence = 0.85; // 默认稍微低一点，表示不确定
 
-  return { name, confidence: confidence > 1 ? confidence / 100 : confidence };
+  // 匹配百分比 (95%)
+  const percentMatch = content.match(/(\d{1,3})(\.\d+)?%/);
+  if (percentMatch) {
+    confidence = parseFloat(percentMatch[1]) / 100;
+  } else {
+    // 匹配小数 (0.95) - 排除掉可能是版本的数字，找 0. 开头的
+    const decimalMatch = content.match(/\b0\.\d+\b/);
+    if (decimalMatch) {
+      confidence = parseFloat(decimalMatch[0]);
+    }
+  }
+
+  // 确保在 0-1 之间
+  confidence = Math.min(Math.max(confidence, 0.1), 0.99);
+
+  return { name: name.trim(), confidence };
 }
 
 // 获取花卉详细信息 - 使用 GLM-4 文本 API
