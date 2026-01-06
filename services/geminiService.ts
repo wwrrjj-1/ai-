@@ -107,18 +107,18 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
 
 // 获取花卉详细信息 - 使用 GLM-4 文本 API
 async function getFlowerInfo(flowerName: string): Promise<Omit<FlowerInfo, "name" | "confidence">> {
-  const prompt = `请为花卉"${flowerName}"生成以下信息，严格按照JSON格式返回：
+  const prompt = `请为花卉"${flowerName}"生成以下信息，严格按照JSON格式返回。**所有内容必须使用简体中文**：
 {
   "scientificName": "花卉的英文名称（如：Rose, Sunflower等）",
-  "description": "优美详细的花卉介绍，包括形态特征和观赏价值，50-80字",
+  "description": "优美详细的花卉介绍，包括形态特征和观赏价值，50-80字，必须使用中文",
   "poetry": "一句与此花相关的诗词，两行，用逗号分隔（如：采菊东篱下，悠然见南山）",
-  "botany": "植物学特征，80字以内，优雅简洁",
-  "culture": "文化内涵，80字以内，富有诗意",
+  "botany": "植物学特征，80字以内，优雅简洁，必须使用中文",
+  "culture": "文化内涵，80字以内，富有诗意，必须使用中文",
   "care": {
-    "water": "浇水要点，15字以内",
-    "sunlight": "光照要求，15字以内",
-    "soil": "土壤要求，15字以内",
-    "temperature": "温度要求，15字以内"
+    "water": "浇水要点，15字以内，使用中文",
+    "sunlight": "光照要求，15字以内，使用中文",
+    "soil": "土壤要求，15字以内，使用中文",
+    "temperature": "温度要求，15字以内，使用中文"
   }
 }
 只返回JSON，不要其他内容。`;
