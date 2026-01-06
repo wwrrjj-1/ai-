@@ -107,8 +107,8 @@ export const identifyFlower = async (base64Image: string): Promise<FlowerInfo> =
 
     return {
       name: flowerName,
-      confidence: 95, // 云端 API 高置信度
-      description,
+      confidence: 0.95, // 云端 API 高置信度
+      description: info.description || `${flowerName}，优雅的花卉植物。`,
       ...info
     };
   } catch (error) {
