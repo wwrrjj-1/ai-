@@ -48,14 +48,28 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
   const data = await response.json();
   const content = data.choices[0].message.content.trim();
 
+  console.log("🌸 Vision API Raw Response:", content);
+
   // 尝试解析 JSON
   try {
     const jsonMatch = content.match(/\{[\s\S]*\}/);
     if (jsonMatch) {
       const result = JSON.parse(jsonMatch[0]);
+      console.log("✅ Parsed JSON:", result);
+
+      let conf = 0.95;
+      if (typeof result.confidence === 'number') {
+        conf = result.confidence;
+      } else if (typeof result.confidence === 'string') {
+        conf = parseFloat(result.confidence);
+      }
+
+      // 确保置信度在合理范围内 (0-1)
+      if (conf > 1) conf = conf / 100;
+
       return {
-        name: result.name,
-        confidence: typeof result.confidence === 'number' ? result.confidence : 0.95
+        name: result.name || "未知花卉",
+        confidence: conf
       };
     }
   } catch (e) {
