@@ -31,7 +31,39 @@ const KnowledgeTabs: React.FC<KnowledgeTabsProps> = ({ info }) => {
 
   // 严格对齐的养护列表
   const renderCareItems = () => {
-    const lines = info.care.split('\n').filter(l => l.trim().length > 0);
+    // 新API返回的是对象格式 {water, sunlight, soil, temperature}
+    const careObj = typeof info.care === 'string'
+      ? null // 如果是旧格式的字符串，退化处理
+      : info.care;
+
+    if (careObj && typeof careObj === 'object') {
+      // 新格式：对象
+      const careItems = [
+        { label: '水分', value: careObj.water || '适量浇水' },
+        { label: '阳光', value: careObj.sunlight || '充足光照' },
+        { label: '土壤', value: careObj.soil || '疏松透气' },
+        { label: '温度', value: careObj.temperature || '适宜温暖' },
+      ];
+
+      return (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 px-1">
+          {careItems.map((item, i) => (
+            <div key={i} className="flex items-start group hover:bg-emerald-50/50 p-2 rounded-lg transition-colors -mx-1.5">
+              <div className="w-16 flex-shrink-0 flex items-center gap-1.5 pt-0.5">
+                <div className="w-1 h-3 bg-emerald-400 rounded-full group-hover:h-3.5 transition-all duration-300"></div>
+                <span className="text-sm font-bold text-emerald-700">{item.label}</span>
+              </div>
+              <span className="flex-1 text-base text-gray-700 leading-relaxed pt-0.5">{item.value}</span>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    // 旧格式：字符串（兜底处理）
+    const lines = typeof info.care === 'string'
+      ? info.care.split('\n').filter(l => l.trim().length > 0)
+      : [];
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 px-1">
         {lines.map((line, i) => {
