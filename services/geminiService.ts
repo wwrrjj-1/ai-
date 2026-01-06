@@ -26,7 +26,7 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
           content: [
             {
               type: "text",
-              text: "请识别图片中的花卉。返回一个JSON格式，包含两个字段：name（花卉中文名称，不要加任何前缀），confidence（识别置信度，根据图片清晰度、光照和特征完整性，给出一个精确的0.80到0.99之间的小数，例如0.98, 0.87, 0.92等。**严禁返回0.95**，必须根据实际情况打分）。只返回JSON。"
+              text: "请作为植物学家，根据图像清晰度、特征可见性、光照条件进行严格打分。返回JSON：{name: string, confidence: number}。\n评分标准：\n- 极度清晰且特征完整：0.98-0.99\n- 略有模糊或部分遮挡：0.90-0.95\n- 较模糊或特征不明显：0.80-0.89\n**请务必给出精确的评估值，例如 0.92, 0.97, 0.88。不要使用固定的 0.95！**"
             },
             {
               type: "image_url",
@@ -37,7 +37,7 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
           ]
         }
       ],
-      temperature: 0.1,
+      temperature: 0.5, // 提高温度以增加多样性
     }),
   });
 
@@ -48,31 +48,24 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
   const data = await response.json();
   const content = data.choices[0].message.content.trim();
 
-  console.log("🌸 Vision API Raw Response:", content);
+  // console.log("🌸 Vision API Raw Response:", content);
 
   // 尝试解析 JSON
   try {
     const jsonMatch = content.match(/\{[\s\S]*\}/);
     if (jsonMatch) {
       const result = JSON.parse(jsonMatch[0]);
-      console.log("✅ Parsed JSON:", result);
+      // console.log("✅ Parsed JSON:", result);
 
-      let conf = 0.875;
+      let conf = 0.95;
       if (typeof result.confidence === 'number') {
         conf = result.confidence;
       } else if (typeof result.confidence === 'string') {
         conf = parseFloat(result.confidence);
       }
 
-      // 添加有机波动 (如果 AI 给的是死板的 0.95/0.99)
-      if (conf === 0.95 || conf === 0.99 || conf > 0.99) {
-        const variance = Math.random() * 0.05 - 0.02; // -0.02 ~ +0.03
-        conf = 0.93 + variance;
-      }
-
       // 确保置信度在合理范围内 (0-1)
       if (conf > 1) conf = conf / 100;
-      conf = Math.min(Math.max(conf, 0.82), 0.992);
 
       return {
         name: result.name || "未知花卉",
@@ -80,7 +73,7 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
       };
     }
   } catch (e) {
-    console.warn("Failed to parse JSON from vision API, falling back to text parsing", e);
+    console.warn("Parsing failed", e);
   }
 
   // 降级处理：如果不是 JSON，尝试直接清理文本作为名字
@@ -88,12 +81,11 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
   name = name.replace(/^中文名称[：:]\s*/, '')
     .replace(/^花名[：:]\s*/, '')
     .replace(/^识别结果[：:]\s*/, '')
-    .replace(/["{}\n]/g, '') // 清理JSON残留符号
+    .replace(/["{}\n]/g, '')
     .replace(/[。，！.!,]/g, '');
 
   // 提取 AI 返回的置信度
-  let confidence = 0.88; // 默认基础分
-
+  let confidence = 0.90; // 默认值
   const percentMatch = content.match(/(\d{1,3})(\.\d+)?%/);
   const decimalMatch = content.match(/\b0\.\d+\b/);
 
@@ -103,22 +95,7 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
     confidence = parseFloat(decimalMatch[0]);
   }
 
-  // --- 关键优化：如果 AI 给出的分太死板 (95% 或 99% 或 87.5%兜底)，我们根据花名长度和哈希人工"微调"一下，让它看起来更真实 ---
-  if (confidence === 0.95 || confidence === 0.99 || confidence === 0.875) {
-    // 这里的逻辑是为了让分数看起来更像真实的AI概率值，避免死板的整数
-    // 1. 生成一个基于名字的伪随机波动 (-0.03 到 +0.02)
-    let hash = 0;
-    for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
-    const variance = (Math.abs(hash) % 50) / 1000; // 0.000 ~ 0.049
-
-    // 2. 也是根据名字长度，太短的名字可能更难确认
-    const lengthFactor = name.length > 2 ? 0.01 : -0.01;
-
-    confidence = confidence - 0.02 + variance + lengthFactor;
-  }
-
-  // 确保在 0.80 - 0.99 之间
-  confidence = Math.min(Math.max(confidence, 0.80), 0.99);
+  confidence = Math.min(Math.max(confidence, 0.1), 0.99);
 
   return { name: name.trim(), confidence };
 }
