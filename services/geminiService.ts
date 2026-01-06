@@ -26,7 +26,7 @@ async function identifyFlowerByVision(base64Image: string): Promise<Identificati
           content: [
             {
               type: "text",
-              text: "请作为植物学家，根据图像清晰度、特征可见性、光照条件进行严格打分。返回JSON：{name: string, confidence: number}。\n评分标准：\n- 极度清晰且特征完整：0.98-0.99\n- 略有模糊或部分遮挡：0.90-0.95\n- 较模糊或特征不明显：0.80-0.89\n**请务必给出精确的评估值，例如 0.92, 0.97, 0.88。不要使用固定的 0.95！**"
+              text: "请作为植物学家，根据图像清晰度、特征可见性、光照条件进行严格打分。返回JSON：{name: string, confidence: number}。\n评分标准：\n- 极度清晰且特征完整：0.9800-0.9999\n- 略有模糊或部分遮挡：0.9000-0.9500\n- 较模糊或特征不明显：0.8000-0.8900\n**请务必精确到小数点后4位，例如 0.9254, 0.9731, 0.8812。拒绝整数！**"
             },
             {
               type: "image_url",
